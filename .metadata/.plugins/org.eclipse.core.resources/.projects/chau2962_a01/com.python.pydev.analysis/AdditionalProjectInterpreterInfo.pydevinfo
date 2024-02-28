@@ -1,0 +1,63 @@
+-- VERSION_5
+-- START DISKCACHE_3
+/Users/tahirchaudhry/eclipse/CP164/.metadata/.plugins/org.eclipse.core.resources/.projects/chau2962_a01/com.python.pydev.analysis/v2_indexcache
+functions|1705211420017474906|/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/functions.py
+t01|1705737553090081077|/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t01.py
+t03|1705424139074863330|/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t03.py
+t02|1705019775831637408|/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t02.py
+t05|1705208154814424776|/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t05.py
+t04|1705020606334810505|/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t04.py
+t07|1705209339371562967|/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t07.py
+t06|1705208950451482434|/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t06.py
+t09|1705211634152645963|/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t09.py
+t08|1705210841230111937|/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t08.py
+-- END DISKCACHE
+-- START DICTIONARY
+20
+2=functions
+1=/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/functions.py
+15=/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t02.py
+11=/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t01.py
+9=/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t03.py
+3=/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t04.py
+12=t01
+10=t03
+16=t02
+13=/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t07.py
+20=t05
+4=t04
+7=/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t08.py
+14=t07
+17=/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t06.py
+18=t06
+19=/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t05.py
+6=t09
+5=/Users/tahirchaudhry/eclipse/CP164/chau2962_a01/src/t09.py
+8=t08
+-- END DICTIONARY
+-- START TREE 1
+20
+cle|1|clean_list!1^16#5*18@
+dsm|1|dsmvwl!1^64#5*18@
+fil|3|file_analyze!1^88#5*18@file_name!3^17#1*35@file_handle!3^18#1*35@
+hea|2|header!5^27#1*51@header!7^27#1*67@
+inp|2|inp!9^17#1*83@inp!11^18#1*99@
+is_|2|is_valid!1^152#5*18@is_leap_year!1^129#5*18@
+isa|1|isansc!1^145#5*18@
+li|2|li!5^31#5*51@li!7^31#5*67@
+lis|2|list_subtraction!1^35#5*18@lis!13^18#1*115@
+m_b|2|m_buf!5^26#1*51@m_buf!7^26#1*67@
+mat|6|matrixes_add!1^228#5*18@matrix2!5^48#1*51@matrix_stats!1^194#5*18@matrix1!5^23#1*51@matrix!7^21#1*67@matrix3!5^72#1*51@
+max|1|max_diff!1^172#5*18@
+min|1|minuend!15^18#1*131@
+n|2|n!7^20#1*67@n!5^20#1*51@
+nn|2|nn!7^34#9*67@nn!5^34#9*51@
+num|4|NUM_MAX!5^17#1*51@NUM_MIN!5^16#1*51@NUM_MAX!7^17#1*67@NUM_MIN!7^16#1*67@
+sub|1|subtrahend!15^20#1*131@
+var|1|varname!17^17#1*147@
+vow|1|VOWELS!1^61#1*19@
+yea|1|year!19^17#1*163@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

@@ -1,0 +1,41 @@
+-- VERSION_5
+-- START DISKCACHE_3
+/Users/tahirchaudhry/eclipse/CP164/.metadata/.plugins/org.eclipse.core.resources/.projects/chau2962_l05/com.python.pydev.analysis/v2_indexcache
+functions|1707576633872292969|/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/functions.py
+t01|1707551581739823094|/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/t01.py
+t03|1707551581740151206|/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/t03.py
+t02|1707551581740008837|/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/t02.py
+t05|1707551581740448945|/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/t05.py
+t04|1707551581740317867|/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/t04.py
+t06|1707551581740574441|/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/t06.py
+-- END DISKCACHE
+-- START DICTIONARY
+14
+2=functions
+1=/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/functions.py
+5=/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/t02.py
+11=/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/t05.py
+7=/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/t03.py
+9=/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/t04.py
+3=/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/t01.py
+4=t01
+8=t03
+6=t02
+12=t05
+10=t04
+14=t06
+13=/Users/tahirchaudhry/eclipse/CP164/chau2962_l05/src/t06.py
+-- END DICTIONARY
+-- START TREE 1
+7
+bag|1|bag_to_set!1^127#5*18@
+gcd|1|gcd!1^37#5*18@
+is_|1|is_palindrome!1^106#5*18@
+mai|6|main!3^16#5*34@main!5^16#5*50@main!7^16#5*66@main!9^16#5*82@main!11^16#5*98@main!13^16#5*114@
+rec|1|recurse!1^16#5*18@
+to_|1|to_power!1^83#5*18@
+vow|2|vowel_count!1^61#5*18@vowels!1^58#1*19@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

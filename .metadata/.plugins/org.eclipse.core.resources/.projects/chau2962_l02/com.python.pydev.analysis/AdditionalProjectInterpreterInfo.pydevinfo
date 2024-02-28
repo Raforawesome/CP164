@@ -1,0 +1,33 @@
+-- VERSION_5
+-- START DISKCACHE_3
+/Users/tahirchaudhry/eclipse/CP164/.metadata/.plugins/org.eclipse.core.resources/.projects/chau2962_l02/com.python.pydev.analysis/v2_indexcache
+t01|1705737600388070879|/Users/tahirchaudhry/eclipse/CP164/chau2962_l02/src/t01.py
+t03|1705737031400556593|/Users/tahirchaudhry/eclipse/CP164/chau2962_l02/src/t03.py
+t02|1705737761363884369|/Users/tahirchaudhry/eclipse/CP164/chau2962_l02/src/t02.py
+t05|1705737031400851834|/Users/tahirchaudhry/eclipse/CP164/chau2962_l02/src/t05.py
+t04|1705737031400708755|/Users/tahirchaudhry/eclipse/CP164/chau2962_l02/src/t04.py
+-- END DISKCACHE
+-- START DICTIONARY
+10
+2=t01
+6=t03
+4=t02
+10=t05
+5=/Users/tahirchaudhry/eclipse/CP164/chau2962_l02/src/t03.py
+7=/Users/tahirchaudhry/eclipse/CP164/chau2962_l02/src/t04.py
+8=t04
+3=/Users/tahirchaudhry/eclipse/CP164/chau2962_l02/src/t02.py
+1=/Users/tahirchaudhry/eclipse/CP164/chau2962_l02/src/t01.py
+9=/Users/tahirchaudhry/eclipse/CP164/chau2962_l02/src/t05.py
+-- END DICTIONARY
+-- START TREE 1
+5
+i|1|i!1^38#1*19@
+inp|2|inp!1^18#1*19@inp!3^19#1*35@
+mai|3|main!5^16#5*50@main!7^16#5*66@main!9^16#5*82@
+sta|2|stack!1^28#1*19@stack!3^21#1*35@
+yes|1|yesify!1^21#5*18@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

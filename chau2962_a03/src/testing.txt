@@ -1,0 +1,350 @@
+-------------------------------------------------------
+Lab/Assignment  Testing
+-------------------------------------------------------
+Author:  Tahir Chaudhry
+ID:      169052962
+Email:   chau2962@mylaurier.ca
+Version: 2024-01-27
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t01.py     
+Enter stack 1:
+Enter digits for stack (enter non-number to end)
+Next number: 1
+Next number: 3
+Next number: 5
+Next number: 7
+Next number: 9
+Next number: end
+
+Enter stack 2:
+Enter digits for stack (enter non-number to end)
+Next number: 2
+Next number: 4
+Next number: 6
+Next number: 8
+Next number: end
+
+Combined stack:
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t01.py     
+Enter stack 1:
+Enter digits for stack (enter non-number to end)
+Next number: 4
+Next number: 6
+Next number: end
+
+Enter stack 2:
+Enter digits for stack (enter non-number to end)
+Next number: 5
+Next number: end
+
+Combined stack:
+[4, 5, 6]
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t01.py     
+Enter stack 1:
+Enter digits for stack (enter non-number to end)
+Next number: 1
+Next number: 2
+Next number: 3
+Next number: end
+
+Enter stack 2:
+Enter digits for stack (enter non-number to end)
+Next number: 1
+Next number: 2
+Next number: 3
+Next number: end
+
+Combined stack:
+[1, 1, 2, 2, 3, 3]
+-------------------------------------------------------
+-------------------------------------------------------
+t02
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t02.py     
+Enter initial stack:
+Enter digits for stack (enter non-number to end)
+Next number: end
+
+Enter source 1:
+Enter digits for stack (enter non-number to end)
+Next number: 1
+Next number: 3
+Next number: 5
+Next number: 7
+Next number: 9
+Next number: end
+
+Enter source 2:
+Enter digits for stack (enter non-number to end)
+Next number: 2
+Next number: 4
+Next number: 6
+Next number: 8
+Next number: end
+
+Combined stacks:
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t02.py     
+Enter initial stack:
+Enter digits for stack (enter non-number to end)
+Next number: 9
+Next number: 8
+Next number: 7
+Next number: end
+
+Enter source 1:
+Enter digits for stack (enter non-number to end)
+Next number: 2
+Next number: 4
+Next number: 6
+Next number: end
+
+Enter source 2:
+Enter digits for stack (enter non-number to end)
+Next number: 1
+Next number: 3
+Next number: 5
+Next number: end
+
+Combined stacks:
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t02.py     
+Enter initial stack:
+Enter digits for stack (enter non-number to end)
+Next number: 3
+Next number: 6
+Next number: end
+
+Enter source 1:
+Enter digits for stack (enter non-number to end)
+Next number: 15
+Next number: 9
+Next number: end
+
+Enter source 2:
+Enter digits for stack (enter non-number to end)
+Next number: 18
+Next number: 12
+Next number: end
+
+Combined stacks:
+[18, 15, 12, 9, 6, 3]
+-------------------------------------------------------
+-------------------------------------------------------
+t03
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t03.py     
+Input stack:
+Enter digits for stack (enter non-number to end)
+Next number: 1
+Next number: 2
+Next number: 3
+Next number: 4
+Next number: 5
+Next number: 6
+Next number: 7
+Next number: 8
+Next number: 9
+Next number: end
+
+Using stack [9, 8, 7, 6, 5, 4, 3, 2, 1]
+Reversed stack: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t03.py     
+Input stack:
+Enter digits for stack (enter non-number to end)
+Next number: 1
+Next number: 2
+Next number: 1
+Next number: end
+
+Using stack [1, 2, 1]
+Reversed stack: [1, 2, 1]
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t03.py     
+Input stack:
+Enter digits for stack (enter non-number to end)
+Next number: 4
+Next number: 3
+Next number: 2
+Next number: 5
+Next number: 1
+Next number: 2
+Next number: 3
+Next number: 4
+Next number: end
+
+Using stack [4, 3, 2, 1, 5, 2, 3, 4]
+Reversed stack: [4, 3, 2, 5, 1, 2, 3, 4]
+-------------------------------------------------------
+-------------------------------------------------------
+t04
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t04.py     
+Input stack:
+Enter digits for stack (enter non-number to end)
+Next number: 1
+Next number: 2
+Next number: 3
+Next number: 4
+Next number: 5
+Next number: 6
+Next number: 7
+Next number: 8
+Next number: 9
+Next number: end
+
+Using stack [9, 8, 7, 6, 5, 4, 3, 2, 1]
+Reversed stack: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t04.py     
+Input stack:
+Enter digits for stack (enter non-number to end)
+Next number: 1
+Next number: 2
+Next number: 1
+Next number: end
+
+Using stack [1, 2, 1]
+Reversed stack: [1, 2, 1]
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t04.py     
+Input stack:
+Enter digits for stack (enter non-number to end)
+Next number: 4
+Next number: 3
+Next number: 2
+Next number: 5
+Next number: 1
+Next number: 2
+Next number: 3
+Next number: 4
+Next number: end
+
+Using stack [4, 3, 2, 1, 5, 2, 3, 4]
+Reversed stack: [4, 3, 2, 5, 1, 2, 3, 4]
+-------------------------------------------------------
+-------------------------------------------------------
+t05
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t05.py     
+enter a string to check: racecar
+is_palindrome_stack("racecar") -> True
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t05.py     
+enter a string to check: Otto
+is_palindrome_stack("Otto") -> True
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t05.py     
+enter a string to check: Able was I ere I saw Elba
+is_palindrome_stack("Able was I ere I saw Elba") -> True
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t05.py     
+enter a string to check: A man, a plan, a canal, Panama!
+is_palindrome_stack("A man, a plan, a canal, Panama!") -> True
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t05.py     
+enter a string to check: facecar
+is_palindrome_stack("facecar") -> False
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t05.py     
+enter a string to check: Grotto
+is_palindrome_stack("Grotto") -> False
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t05.py     
+enter a string to check: i did not see elba
+is_palindrome_stack("i did not see elba") -> False
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t05.py     
+enter a string to check: just a man, no panama
+is_palindrome_stack("just a man, no panama") -> False
+-------------------------------------------------------
+-------------------------------------------------------
+t06
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t06.py     
+Enter a postfix expression: 12 5 -
+Evaluation:
+7
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t06.py     
+Enter a postfix expression:  4 5 + 12 * 2 3 * -
+Evaluation:
+102
+
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t06.py     
+Enter a postfix expression: 1 1 1 1 1 1 1 + + + + + +
+Evaluation:
+7
+-------------------------------------------------------
+-------------------------------------------------------
+t07
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a03/src                            
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t07.py     
+Maze Test #0
+Maze:
+{'Start': ['A'], 'A': ['B', 'C'], 'B': [], 'C': ['D', 'E'], 'D': [], 'E': ['F', 'X'], 'F': ['G', 'H'], 'G': [], 'H': []}
+
+Solution:
+['A', 'C', 'E', 'X']
+
+
+
+Maze Test #1
+Maze:
+{'Start': ['X']}
+
+Solution:
+['X']
+
+
+
+Maze Test #2
+Maze:
+{'Start': ['A'], 'A': ['B', 'C'], 'B': [], 'C': ['D', 'E'], 'D': [], 'E': ['X', 'F'], 'F': ['G'], 'G': ['C']}
+
+Solution:
+['A', 'C', 'E', 'X']
+
+
+
+Maze Test #3
+Maze:
+{'Start': ['A'], 'A': []}
+
+Solution:
+None
+-------------------------------------------------------

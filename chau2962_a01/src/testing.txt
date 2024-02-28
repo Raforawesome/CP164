@@ -1,0 +1,270 @@
+-------------------------------------------------------
+Lab/Assignment  Testing
+-------------------------------------------------------
+Author:  Tahir Chaudhry
+ID:      169052962
+Email:   chau2962@mylaurier.ca
+Version: 2024-01-11
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t01.py
+Enter a list of comma-seperated numbers: 1, 2, 0, 1, 4, 1, 1, 2, 2, 5, 4, 3, 1, 3, 3, 4, 2, 4, 3, 1, 3, 0, 3, 0, 0
+clean_list([1, 2, 0, 1, 4, 1, 1, 2, 2, 5, 4, 3, 1, 3, 3, 4, 2, 4, 3, 1, 3, 0, 3, 0, 0]) ->:
+[5, 2, 4, 1, 3, 0]
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t01.py
+Enter a list of comma-seperated numbers: 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 3, 0, 0, 0, 0, 4, 0, 0, 5
+clean_list([0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 3, 0, 0, 0, 0, 4, 0, 0, 5]) ->:
+[1, 2, 3, 4, 0, 5]
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t01.py
+Enter a list of comma-seperated numbers: 1, 1, 1, 1, 1, 1, 2
+clean_list([1, 1, 1, 1, 1, 1, 2]) ->:
+[1, 2]
+-------------------------------------------------------
+-------------------------------------------------------
+t02
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t02.py
+Enter a list of comma-seperated numbers: 5, 5, 4, 5
+Enter a list of comma-seperated numbers to remove: 5
+list_subtraction([5, 5, 4, 5], [5]) ->:
+[4]
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t02.py
+Enter a list of comma-seperated numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9
+Enter a list of comma-seperated numbers to remove: 2, 4, 6, 8
+list_subtraction([1, 2, 3, 4, 5, 6, 7, 8, 9], [2, 4, 6, 8]) ->:
+[1, 3, 5, 7, 9]
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t02.py
+Enter a list of comma-seperated numbers: 1, 2, 1, 4, 1, 6, 1, 8
+Enter a list of comma-seperated numbers to remove: 1
+list_subtraction([1, 2, 1, 4, 1, 6, 1, 8], [1]) ->:
+[2, 4, 6, 8]
+-------------------------------------------------------
+-------------------------------------------------------
+t03
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t03.py
+Enter a string to disemvowel: I think your book is an utter piece of garbage.
+dsmvwl("I think your book is an utter piece of garbage.") ->  thnk yr bk s n ttr pc f grbg.
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t03.py
+Enter a string to disemvowel: Callbacks can use closure syntax
+dsmvwl("Callbacks can use closure syntax") -> Cllbcks cn s clsr syntx
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t03.py
+Enter a string to disemvowel: This is done by comparing numeric priority attached to each definition
+dsmvwl("This is done by comparing numeric priority attached to each definition") -> Ths s dn by cmprng nmrc prrty ttchd t ch dfntn
+-------------------------------------------------------
+-------------------------------------------------------
+t04
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t04.py
+Enter a file to analyze: foods.txt
+file_analyze(<File: foods.txt>) -> (133, 585, 175, 91, 131)
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t04.py
+Enter a file to analyze: functions.py
+file_analyze(<File: functions.py>) -> (96, 3328, 74, 2156, 2228)
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t04.py
+Enter a file to analyze: t04.py
+file_analyze(<File: t04.py>) -> (12, 209, 25, 55, 229)
+-------------------------------------------------------
+-------------------------------------------------------
+t05
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t05.py
+Enter a year: 2000
+is_leap_year(2000) -> True
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t05.py
+Enter a year: 1900
+is_leap_year(1900) -> False
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t05.py
+Enter a year: 2016
+is_leap_year(2016) -> True
+-------------------------------------------------------
+-------------------------------------------------------
+t06
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t06.py
+Enter a variable name: 2var
+is_valid("2var") -> False
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t06.py
+Enter a variable name: _temp
+is_valid("_temp") -> True
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t06.py
+Enter a variable name: SCREAMING_SNAKE_CASE
+is_valid("SCREAMING_SNAKE_CASE") -> True
+-------------------------------------------------------
+-------------------------------------------------------
+t07
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t07.py
+Enter a list of comma-seperated numbers: 40, 20, 10, 5
+max_diff([40, 20, 10, 5]) -> 20
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t07.py
+Enter a list of comma-seperated numbers: 1, 1, 100, 1, 1
+max_diff([1, 1, 100, 1, 1]) -> 99
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t07.py
+Enter a list of comma-seperated numbers: 21, 23, 100, 99, 24
+max_diff([21, 23, 100, 99, 24]) -> 77
+-------------------------------------------------------
+-------------------------------------------------------
+t08
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t08.py
+Enter a value 'n' to generate an n by n array: 4
+Matrix:
+---------------
+| 50 28 03 24 |
+| 62 75 02 87 |
+| 08 75 97 51 |
+| 12 54 92 04 |
+---------------
+
+matrix_stats(<Matrix>) -> (2, 97, 724.0, 45.25)
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t08.py
+Enter a value 'n' to generate an n by n array: 3
+Matrix:
+------------
+| 95 66 48 |
+| 89 22 95 |
+| 07 15 65 |
+------------
+
+matrix_stats(<Matrix>) -> (7, 95, 502.0, 55.77777777777778)
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t08.py
+Enter a value 'n' to generate an n by n array: 5
+Matrix:
+------------------
+| 75 39 01 48 42 |
+| 20 45 57 68 70 |
+| 92 42 93 96 63 |
+| 40 76 89 31 59 |
+| 17 24 02 54 99 |
+------------------
+
+matrix_stats(<Matrix>) -> (1, 99, 1342.0, 53.68)
+-------------------------------------------------------
+-------------------------------------------------------
+t09
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t09.py
+Enter a value 'n' to generate two n by n arrays: 3
+Matrix 1:
+------------
+| 85 63 88 |
+| 17 34 83 |
+| 80 02 15 |
+------------
+
+Matrix 2:
+------------
+| 96 49 98 |
+| 37 70 69 |
+| 42 49 22 |
+------------
+
+Sum of matrices:
+----------------
+| 181 112 186 |
+| 054 104 152 |
+| 122 051 037 |
+----------------
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t09.py
+Enter a value 'n' to generate two n by n arrays: 4
+Matrix 1:
+---------------
+| 87 87 03 64 |
+| 01 93 84 52 |
+| 64 45 48 83 |
+| 25 78 56 15 |
+---------------
+
+Matrix 2:
+---------------
+| 30 80 32 11 |
+| 57 02 77 20 |
+| 20 95 85 96 |
+| 87 90 13 52 |
+---------------
+
+Sum of matrices:
+--------------------
+| 117 167 035 075 |
+| 058 095 161 072 |
+| 084 140 133 179 |
+| 112 168 069 067 |
+--------------------
+
+╭─    ~/eclipse/CP164/chau2962_a01/src 
+╰─❯ py t09.py
+Enter a value 'n' to generate two n by n arrays: 5
+Matrix 1:
+------------------
+| 33 20 51 81 54 |
+| 60 76 89 89 98 |
+| 94 40 67 28 93 |
+| 24 91 00 26 53 |
+| 48 90 70 93 72 |
+------------------
+
+Matrix 2:
+------------------
+| 83 09 92 01 62 |
+| 19 99 46 15 34 |
+| 66 01 48 09 93 |
+| 01 25 11 09 18 |
+| 19 15 32 46 34 |
+------------------
+
+Sum of matrices:
+------------------------
+| 116 029 143 082 116 |
+| 079 175 135 104 132 |
+| 160 041 115 037 186 |
+| 025 116 011 035 071 |
+| 067 105 102 139 106 |
+------------------------
+-------------------------------------------------------

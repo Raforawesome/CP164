@@ -1,0 +1,48 @@
+-- VERSION_5
+-- START DISKCACHE_3
+/Users/tahirchaudhry/eclipse/CP164/.metadata/.plugins/org.eclipse.core.resources/.projects/chau2962_a03/com.python.pydev.analysis/v2_indexcache
+functions|1706745517914512344|/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/functions.py
+t01|1706450625813995679|/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t01.py
+t03|1706454343530950830|/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t03.py
+t02|1706451656416142542|/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t02.py
+t05|1706454343530937330|/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t05.py
+t04|1706451775090906853|/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t04.py
+t07|1706452475205849114|/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t07.py
+t06|1706451871324772140|/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t06.py
+-- END DISKCACHE
+-- START DICTIONARY
+16
+9=/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t07.py
+5=/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/functions.py
+6=functions
+11=/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t01.py
+12=t01
+3=/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t02.py
+16=t03
+4=t02
+8=t05
+13=/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t04.py
+14=t04
+15=/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t03.py
+7=/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t05.py
+10=t07
+1=/Users/tahirchaudhry/eclipse/CP164/chau2962_a03/src/t06.py
+2=t06
+-- END DICTIONARY
+-- START TREE 1
+11
+exp|1|expr!1^17#1*19@
+ini|1|initial_stack!3^18#1*35@
+inp|1|input_stack!5^19#5*50@
+is_|2|is_palindrome_stack!5^78#5*50@is_palin!7^18#1*67@
+maz|5|maze2!9^19#1*83@maze4!9^22#1*83@maze1!9^18#1*83@maze3!9^21#1*83@mazes!9^24#1*83@
+ope|1|OPERATORS!5^118#1*51@
+out|1|output!11^23#1*99@
+pos|1|postfix!5^121#5*50@
+pun|1|PUNCTUATION!5^75#1*51@
+sta|9|stack!13^18#1*115@stack2!11^21#1*99@stack_combine!5^30#5*50@stack1!3^21#1*35@stack_maze!5^153#5*50@stack_reverse!5^55#5*50@stack1!11^18#1*99@stack2!3^24#1*35@stack!15^18#1*131@
+str|1|string!7^17#1*67@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

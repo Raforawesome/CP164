@@ -1,0 +1,43 @@
+-------------------------------------------------------
+Lab/Assignment  Testing
+-------------------------------------------------------
+Author:  Tahir Chaudhry
+ID:      169052962
+Email:   chau2962@mylaurier.ca
+Version: 2024-02-18
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a06/src                       
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t01.py
+Construction test passed!
+Insert and remove test passed!
+Peek test passed!
+Combine (interlacing) test passed!
+Split alternate test passed!
+-------------------------------------------------------
+-------------------------------------------------------
+t02
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a06/src                       
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t02.py
+Construction test passed!
+Insert and remove test passed!
+Peek test passed!
+Combine (interlacing) test passed!
+Split alternate test passed!
+-------------------------------------------------------
+-------------------------------------------------------
+t03
+-------------------------------------------------------
+╭─    ~/eclipse/CP164/chau2962_a06/src                       
+╰─❯ PYTHONPATH=../../chau2962_data_structures/src/ python3 t03.py
+Construction test passed!
+Insert and remove (Front and Rear) test passed!
+Peek test passed!
+Equality test passed!
+Swapping test passed!
+Iteration test passed!
+-------------------------------------------------------

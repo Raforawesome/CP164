@@ -1,0 +1,10 @@
+MODULES_MANAGER_V3
+Food|/Users/tahirchaudhry/eclipse/CP164/chau2962_data_structures/src/Food.py
+Food_utilities|/Users/tahirchaudhry/eclipse/CP164/chau2962_data_structures/src/Food_utilities.py
+List_array|/Users/tahirchaudhry/eclipse/CP164/chau2962_data_structures/src/List_array.py
+Priority_Queue_array|/Users/tahirchaudhry/eclipse/CP164/chau2962_data_structures/src/Priority_Queue_array.py
+Queue_array|/Users/tahirchaudhry/eclipse/CP164/chau2962_data_structures/src/Queue_array.py
+Queue_circular|/Users/tahirchaudhry/eclipse/CP164/chau2962_data_structures/src/Queue_circular.py
+Sorted_List_array|/Users/tahirchaudhry/eclipse/CP164/chau2962_data_structures/src/Sorted_List_array.py
+Stack_array|/Users/tahirchaudhry/eclipse/CP164/chau2962_data_structures/src/Stack_array.py
+utilities|/Users/tahirchaudhry/eclipse/CP164/chau2962_data_structures/src/utilities.py

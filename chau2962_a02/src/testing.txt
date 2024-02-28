@@ -1,0 +1,133 @@
+-------------------------------------------------------
+Lab/Assignment  Testing
+-------------------------------------------------------
+Author:  Tahir Chaudhry
+ID:      169052962
+Email:   chau2962@mylaurier.ca
+Version: 2024-01-20
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+-------------------------------------------------------
+╭─    ~/eclipse/CP164 
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t01.py
+Enter an origin: 0
+Filtering foods.txt by origin ID 0 (Canadian):
+['Canuck Burger', 'Canada Goose Chili', 'Poutine', 'Fricot', 'Grilled Salmon']
+
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t01.py
+Enter an origin: 2
+Filtering foods.txt by origin ID 2 (Indian):
+['Butter Chicken', 'Chicken Kabob']
+
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t01.py
+Enter an origin: 4
+Filtering foods.txt by origin ID 4 (Mexican):
+['Chamuco']
+-------------------------------------------------------
+-------------------------------------------------------
+t02
+-------------------------------------------------------
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t02.py
+Enter an origin: 0
+Enter a max calories value: 0
+Only display vegetarian foods? no
+The average calories in the selected foods is 1856
+
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t02.py
+Enter an origin: 4
+Enter a max calories value: 0
+Only display vegetarian foods? yes
+The average calories in the selected foods is 150
+
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t02.py
+Enter an origin: 0
+Enter a max calories value: 1000
+Only display vegetarian foods? no
+The average calories in the selected foods is 445
+-------------------------------------------------------
+-------------------------------------------------------
+t03
+-------------------------------------------------------
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t03.py
+Enter an origin: 0
+The average calories in foods.txt with origin ID 0 (Canadian): 1856
+
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t03.py
+Enter an origin: 3
+The average calories in foods.txt with origin ID 3 (Ethiopian): 138
+
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t03.py
+Enter an origin: 2
+The average calories in foods.txt with origin ID 2 (Indian): 328
+-------------------------------------------------------
+-------------------------------------------------------
+t04
+-------------------------------------------------------
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t04.py
+Enter an origin: 0
+Enter a max calories value: 0
+Only display vegetarian foods? no
+Food                                Origin       Vegetarian Calories
+----------------------------------- ------------ ---------- --------
+Canada Goose Chili                  Canadian          False      199
+Canuck Burger                       Canadian          False     7500
+Fricot                              Canadian          False      360
+Grilled Salmon                      Canadian          False      511
+Poutine                             Canadian          False      710
+
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t04.py
+Enter an origin: 4
+Enter a max calories value: 0
+Only display vegetarian foods? yes
+Food                                Origin       Vegetarian Calories
+----------------------------------- ------------ ---------- --------
+Chamuco                             Mexican            True      150
+
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t04.py
+Enter an origin: 0
+Enter a max calories value: 1000
+Only display vegetarian foods? no
+Food                                Origin       Vegetarian Calories
+----------------------------------- ------------ ---------- --------
+Canada Goose Chili                  Canadian          False      199
+Fricot                              Canadian          False      360
+Grilled Salmon                      Canadian          False      511
+Poutine                             Canadian          False      710
+-------------------------------------------------------
+-------------------------------------------------------
+t05
+-------------------------------------------------------
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t05.py
+Enter an origin: 0
+Enter a max calories value: 0
+Only display vegetarian foods? no
+['Canuck Burger', 'Canada Goose Chili', 'Poutine', 'Fricot', 'Grilled Salmon']
+
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t05.py
+Enter an origin: 4
+Enter a max calories value: 0
+Only display vegetarian foods? yes
+['Chamuco']
+
+╭─    ~/eclipse/CP164                                                   
+╰─❯ PYTHONPATH=chau2962_data_structures/src/ python3 chau2962_a02/src/t05.py
+Enter an origin: 0
+Enter a max calories value: 1000
+Only display vegetarian foods? no
+['Canada Goose Chili', 'Poutine', 'Fricot', 'Grilled Salmon']
+-------------------------------------------------------
