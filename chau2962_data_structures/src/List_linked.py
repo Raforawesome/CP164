@@ -2,17 +2,15 @@
 -------------------------------------------------------
 Linked version of the list ADT.
 -------------------------------------------------------
-Author:  David Brown
-ID:      123456789
-Email:   dbrown@wlu.ca
-__updated__ = "2024-02-13"
+Author:  Tahir Chaudhry
+ID:      169052962
+Email:   chau2962@mylaurier.ca
+__updated__ = "2024-03-09"
 -------------------------------------------------------
 """
 from copy import deepcopy
 
 
-# def clamp(n: int, min: int, max: int):
-#     return n <= min and min or (n >= max and max or n)
 def clamp(n: int, min: int, max: int):
     if n < min:
         n = min
@@ -22,7 +20,6 @@ def clamp(n: int, min: int, max: int):
 
 
 class _List_Node:
-
     def __init__(self, value, next_):
         """
         -------------------------------------------------------
@@ -42,7 +39,6 @@ class _List_Node:
 
 
 class List:
-
     def __init__(self):
         """
         -------------------------------------------------------
@@ -67,8 +63,7 @@ class List:
             True if the list is empty, False otherwise.
         -------------------------------------------------------
         """
-        # your code here
-        return
+        return self._front is None and self._rear is None
 
     def __len__(self):
         """
@@ -94,14 +89,13 @@ class List:
             None
         -------------------------------------------------------
         """
-        node = _List_Node(value, None)
-        # these will always be none or not none at the same time
-        if self._front is None and self._rear is None:
-            self._front = node
-            self._rear = node
+        if self._front is None:
+            new_node = _List_Node(value, None)
+            self._rear = new_node
+            self._front = new_node
         else:
-            node._next = self._front
-            self._front = node
+            new_node = _List_Node(value, self._front)
+            self._front = new_node
         self._count += 1
         return None
 
@@ -117,14 +111,13 @@ class List:
             None
         -------------------------------------------------------
         """
-        node = _List_Node(value, None)
-        # these will always be none or not none at the same time
-        if self._front is None and self._rear is None:
-            self._front = node
-            self._rear = node
+        new_node = _List_Node(value, None)
+        if self._front is None:
+            self._front = new_node
+            self._rear = new_node
         else:
-            self._rear._next = node
-            self._rear = node
+            self._rear._next = new_node
+            self._rear = new_node
         self._count += 1
         return None
 
@@ -132,7 +125,7 @@ class List:
         """
         -------------------------------------------------------
         A copy of value is added to index i, following values are pushed right.
-        If i outside of range of -len(list) to len(list) - 1, the value is 
+        If i outside of range of -len(list) to len(list) - 1, the value is
         prepended or appended as appropriate.
         Use: lst.insert(i, value)
         -------------------------------------------------------
@@ -143,23 +136,29 @@ class List:
             None
         -------------------------------------------------------
         """
-        ct = self._count
-        idx = clamp(i, -ct, ct - 1)
-        if idx < 0:
-            idx = clamp(ct + idx, 0, ct - 1)
-        if idx == 0:
+        if i <= -1 * self._count:
             self.prepend(value)
-        elif idx == ct - 1:
+        elif i == 0:
+            self.prepend(value)
+        elif i > self._count:
             self.append(value)
         else:
-            # print(f"idx: {idx}\nlen:{ct}")
-            current = None
-            j = 0
-            while j < idx:
-                current = current is not None and current._next or self._front
-            node = _List_Node(value, None)
-            node._next = current._next
-            current._next = node
+            if i > 0:
+                a = 0
+                temp = self._front
+                while a < i - 1:
+                    temp = temp._next
+                    a += 1
+            else:
+                a = -1 * self._count
+                temp = self._front
+                while a < i - 1:
+                    temp = temp._next
+                    a += 1
+
+            n = temp._next
+            new_node = _List_Node(value, n)
+            temp._next = new_node
             self._count += 1
         return None
 
@@ -176,26 +175,30 @@ class List:
         Returns:
             previous - pointer to the node previous to the node containing key (_ListNode)
             current - pointer to the node containing key (_ListNode)
-            index - index of the node containing key, -1 if key is not found (int)
+            index - index of the node containing key (int)
         -------------------------------------------------------
         """
-        idx = -1
-        prev = self._front
-        curr = None
-        i = 0
-        while prev is not None and prev._next is not None:
-            if prev._next._value == key:
-                curr = prev._next
-                idx = i - 1
-            i += 1
-        if idx == -1:
-            prev = None
-        return prev, curr, idx
+        current = self._front
+        previous = None
+        found = False
+        index = 0
+        while not found and current is not None:
+            if current._value == key:
+                found = True
+            else:
+                previous = current
+                current = current._next
+                index += 1
+
+        if found is False:
+            index = -1
+            current = None
+        return previous, current, index
 
     def _linear_search_r(self, key):
         """
         -------------------------------------------------------
-        Searches for the first occurrence of key in list.
+        Searches for the first occurrence of key in list recursively.
         Private helper method.
         (iterative algorithm)
         Use: previous, current, index = self._linear_search(key)
@@ -205,16 +208,25 @@ class List:
         Returns:
             previous - pointer to the node previous to the node containing key (_ListNode)
             current - pointer to the node containing key (_ListNode)
-            index - index of the node containing key, -1 if key is not found (int)
+            index - index of the node containing key (int)
         -------------------------------------------------------
         """
-        def _search(prev, key, i):
-            if prev._next is None:
-                return -1
-            if prev._next._value == key:
-                pass
-            pass
-        return None
+        previous = None
+        current = self._front
+        index = 0
+        if self._front is not None:
+            previous, current, index = self._linear_search_r_aux(key, previous, current, index)
+        else:
+            index = -1
+        return previous, current, index
+
+    def _linear_search_r_aux(self, key, previous, current, index):
+        if current is None:
+            index = -1
+        elif current._value != key:
+            previous, current, index = self._linear_search_r_aux(key, current, current._next, index + 1)
+
+        return previous, current, index
 
     def remove(self, key):
         """
@@ -228,8 +240,24 @@ class List:
             value - the full value matching key, otherwise None (?)
         -------------------------------------------------------
         """
-        # your code here
-        return
+        previous, current, index = self._linear_search(key)
+        value = None
+        if current is not None:
+            if self._count == 1:
+                self._front = None
+                self._rear = None
+            elif previous is None:
+                self._front = current._next
+            elif current._next is None:
+                self._rear = previous
+                previous._next = None
+            else:
+                previous._next = current._next
+
+            self._count -= 1
+            value = current._value
+
+        return value
 
     def remove_front(self):
         """
@@ -243,8 +271,15 @@ class List:
         """
         assert self._front is not None, "Cannot remove from an empty list"
 
-        # your code here
-        return
+        front = self._front
+        value = front._value
+        n = front._next
+        front._next = None
+        self._front = n
+        self._count -= 1
+        if self._count == 0:
+            self._rear = None
+        return value
 
     def remove_many(self, key):
         """
@@ -258,8 +293,27 @@ class List:
             None
         -------------------------------------------------------
         """
-        # your code here
-        return
+
+        f = self._front
+        while f is not None and f._value == key:
+            _ = self.remove_front()
+            f = self._front
+        curr = self._front
+        prev = _List_Node(None, None)
+        while curr is not None:
+            if curr._value == key:
+                prev._next = curr._next
+                curr._next = None
+                curr = prev._next
+                self._count -= 1
+            else:
+                prev = curr
+                curr = curr._next
+        if self._count > 0:
+            self._rear = prev
+        else:
+            self._rear = None
+        return None
 
     def find(self, key):
         """
@@ -273,8 +327,12 @@ class List:
             value - a copy of the full value matching key, otherwise None (?)
         -------------------------------------------------------
         """
-        # your code here
-        return
+        previous, current, index = self._linear_search(key)
+        value = None
+        if current is not None:
+            value = current._value
+
+        return value
 
     def peek(self):
         """
@@ -288,8 +346,7 @@ class List:
         """
         assert self._front is not None, "Cannot peek at an empty list"
 
-        # your code here
-        return
+        return deepcopy(self._front._value)
 
     def index(self, key):
         """
@@ -304,8 +361,8 @@ class List:
                 key is not in the list.
         -------------------------------------------------------
         """
-        # your code here
-        return
+        previous, current, index = self._linear_search(key)
+        return index
 
     def _is_valid_index(self, i):
         """
@@ -337,9 +394,16 @@ class List:
         -------------------------------------------------------
         """
         assert self._is_valid_index(i), "Invalid index value"
-
-        # your code here
-        return
+        current = self._front
+        if i >= 0:
+            a = 0
+        else:
+            a = -1 * self._count
+        while a < i:
+            current = current._next
+            a += 1
+        value = deepcopy(current._value)
+        return value
 
     def __setitem__(self, i, value):
         """
@@ -351,13 +415,21 @@ class List:
             i - index of the element to access (int)
             value - a data value (?)
         Returns:
-            The i-th element of list contains a copy of value. The 
+            The i-th element of list contains a copy of value. The
                 existing value at i is overwritten.
         -------------------------------------------------------
         """
         assert self._is_valid_index(i), "Invalid index value"
 
-        # your code here
+        current = self._front
+        if i >= 0:
+            a = 0
+        else:
+            a = -1 * self._count
+        while a < i:
+            current = current._next
+            a += 1
+        current._value = deepcopy(value)
         return
 
     def __contains__(self, key):
@@ -372,8 +444,8 @@ class List:
             True if the list contains key, False otherwise.
         -------------------------------------------------------
         """
-        # your code here
-        return
+        previous, current, index = self._linear_search(key)
+        return index != -1
 
     def max(self):
         """
@@ -387,8 +459,14 @@ class List:
         """
         assert self._front is not None, "Cannot find maximum of an empty list"
 
-        # your code here
-        return
+        current = self._front
+        max_data = current._value
+        while current is not None:
+            if current._value > max_data:
+                max_data = current._value
+            current = current._next
+
+        return deepcopy(max_data)
 
     def min(self):
         """
@@ -402,8 +480,14 @@ class List:
         """
         assert self._front is not None, "Cannot find maximum of an empty list"
 
-        # your code here
-        return
+        current = self._front
+        min_data = current._value
+        while current is not None:
+            if current._value < min_data:
+                min_data = current._value
+            current = current._next
+
+        return deepcopy(min_data)
 
     def count(self, key):
         """
@@ -417,8 +501,14 @@ class List:
             number - number of times key appears in list (int)
         -------------------------------------------------------
         """
-        # your code here
-        return
+        number = 0
+        previous, current, index = self._linear_search(key)
+        if index != -1:
+            while current is not None:
+                if current._value == key:
+                    number += 1
+                current = current._next
+        return number
 
     def reverse(self):
         """
@@ -432,7 +522,17 @@ class List:
             to their order before the method was called.
         -------------------------------------------------------
         """
-        # your code here
+        self._rear = self._front
+        previous = None
+        current = self._front
+
+        while current is not None:
+            temp = current._next
+            current._next = previous
+            previous = current
+            current = temp
+
+        self._front = previous
         return
 
     def reverse_r(self):
@@ -447,14 +547,29 @@ class List:
             to their order before the method was called.
         -------------------------------------------------------
         """
-        # your code here
+        f = self._front
+        if f is not None:
+            self._reverse_r_aux(self._front, None)
+            self._rear = f
+
+        return
+
+    def _reverse_r_aux(self, curr, prev):
+        if curr._next is None:
+            self._front = curr
+            curr._next = prev
+
+        else:
+            next = curr._next
+            curr._next = prev
+            self._reverse_r_aux(next, curr)
         return
 
     def clean(self):
         """
         ---------------------------------------------------------
-        Removes duplicates from the list. The list contains 
-        one and only one of each value formerly present in the list. 
+        Removes duplicates from the list. The list contains
+        one and only one of each value formerly present in the list.
         The first occurrence of each value is preserved.
         Use: source.clean()
         -------------------------------------------------------
@@ -462,8 +577,24 @@ class List:
             None
         -------------------------------------------------------
         """
-        # your code here
-        return
+
+        curr = self._front
+        prev = _List_Node(None, None)
+        while curr is not None:
+            _, current, _ = self._linear_search(curr._value)
+            if curr is not current:
+                prev._next = curr._next
+                curr._next = None
+                curr = prev._next
+                self._count -= 1
+            else:
+                prev = curr
+                curr = curr._next
+        if self._count > 0:
+            self._rear = prev
+        else:
+            self._rear = None
+        return None
 
     def pop(self, *args):
         """
@@ -476,8 +607,8 @@ class List:
             args - an array of arguments (tuple of int)
             args[0], if it exists, is the index i
         Returns:
-            value - if args exists, the value at position args[0], 
-                otherwise the last value in the list, value is 
+            value - if args exists, the value at position args[0],
+                otherwise the last value in the list, value is
                 removed from the list (?)
         -------------------------------------------------------
         """
@@ -490,7 +621,6 @@ class List:
         if len(args) == 1:
 
             if args[0] < 0:
-                # index is negative
                 n = self._count + args[0]
             else:
                 n = args[0]
@@ -501,7 +631,6 @@ class List:
                 current = current._next
                 j += 1
         else:
-            # find and pop the last element
             j = 0
 
             while j < (self._count - 1):
@@ -513,25 +642,21 @@ class List:
         self._count -= 1
 
         if previous is None:
-            # Remove the first node.
             self._front = self._front._next
 
             if self._front is None:
-                # List is empty, update _rear.
                 self._rear = None
         else:
-            # Remove any other node.
             previous._next = current._next
 
             if previous._next is None:
-                # Last node was removed, update _rear.
                 self._rear = previous
         return value
 
     def _swap(self, pln, prn):
         """
         -------------------------------------------------------
-        Swaps the position of two nodes. The nodes in pln.next and prn.next 
+        Swaps the position of two nodes. The nodes in pln.next and prn.next
         have been swapped, and all links to them updated.
         Use: self._swap(pln, prn)
         -------------------------------------------------------
@@ -542,8 +667,30 @@ class List:
             None
         -------------------------------------------------------
         """
-        # your code here
-        return
+        if pln is not prn:
+
+            if pln is None:
+                left = self._front
+                self._front = prn._next
+            else:
+                left = pln._next
+                pln._next = prn._next
+
+            if prn is None:
+                right = self._front
+                self._front = left
+            else:
+                right = prn._next
+                prn._next = left
+
+            temp = left._next
+            left._next = right._next
+            right._next = temp
+            if right._next is None:
+                self._rear = right
+            elif left._next is None:
+                self._rear = left
+        return None
 
     def __eq__(self, target):
         """
@@ -560,31 +707,86 @@ class List:
                 as target in the same order, otherwise False. (boolean)
         -------------------------------------------------------
         """
-        # your code here
-        return
+        equals = True
+        h1 = self._front
+        h2 = target._front
+        while (h1 is not None or h2 is not None) and equals is True:
+            if (h1 is not None and h2 is None) or (h1 is None and h2 is not None):
+                equals = False  # unequal lengths
+            elif h1._value != h2._value:
+                equals = False
+            else:
+                h1 = h1._next
+                h2 = h2._next
+        return equals
 
-    def identical_r(self, other):
+    def is_identical(self, target):
         """
         ---------------------------------------------------------
-        Determines whether two lists are identical. 
+        Determines whether two lists are identical.
+        (iterative version)
+        Use: b = lst.is_identical(other)
+        -------------------------------------------------------
+        Parameters:
+            other - another list (List)
+        Returns:
+            identical - True if this list contains the same values as
+                other in the same order, otherwise False.
+        -------------------------------------------------------
+        """
+        if self._count != target._count:
+            identical = False
+        else:
+            source_node = self._front
+            target_node = target._front
+
+            while source_node is not None and source_node._value == target_node._value:
+                source_node = source_node._next
+                target_node = target_node._next
+
+            identical = source_node is None
+        return identical
+
+    def is_identical_r(self, other):
+        """
+        ---------------------------------------------------------
+        Determines whether two lists are identical.
         (recursive version)
         Use: b = lst.identical_r(other)
         -------------------------------------------------------
         Parameters:
             rs - another list (List)
         Returns:
-            identical - True if this list contains the same values 
+            identical - True if this list contains the same values
                 as other in the same order, otherwise False.
         -------------------------------------------------------
         """
-        # your code here
-        return
+        identical = True
+        if self._count != other._count:
+            identical = False
+        else:
+            identical = self.is_identical_r_aux(self._front, other._front)
+        return identical
+
+    def is_identical_r_aux(self, f, o):
+        if f is None or o is None:
+            if o is None and f is None:
+                identical = True
+            else:
+                identical = False
+        elif f._value != o._value:
+            identical = False
+
+        else:
+            identical = self.is_identical_r_aux(f._next, o._next)
+
+        return identical
 
     def split(self):
         """
         -------------------------------------------------------
         Splits list into two parts. target1 contains the first half,
-        target2 the second half. At finish self is empty.
+        target2 the second half. Current list becomes empty.
         Use: target1, target2 = lst.split()
         -------------------------------------------------------
         Returns:
@@ -592,14 +794,26 @@ class List:
             target2 - a new List with <= 50% of the original List (List)
         -------------------------------------------------------
         """
-        # your code here
-        return
+        target1 = List()
+        target2 = List()
+        mid = (self._count // 2 + self._count % 2) - 1
+        db = False
+        i = 0
+        while self._front is not None:
+            if db is False:
+                target1._move_front_to_rear(self)
+            else:
+                target2._move_front_to_rear(self)
+            if i == mid:
+                db = not db
+            i += 1
+        return target1, target2
 
     def split_alt(self):
         """
         -------------------------------------------------------
-        Splits the source list into separate target lists with values 
-        alternating into the targets. At finish source self is empty.
+        Splits the source list into separate target lists with values
+        alternating into the targets. At finish source list is empty.
         Order of source values is preserved.
         (iterative algorithm)
         Use: target1, target2 = source.split()
@@ -609,17 +823,23 @@ class List:
             target2 - contains other alternating values from source (List)
         -------------------------------------------------------
         """
-        # your code here
-        return
+        target1 = List()
+        target2 = List()
+        left = True
+        while self._front is not None:
+            if left:
+                target1._move_front_to_rear(self)
+            else:
+                target2._move_front_to_rear(self)
+            left = not left
+        return target1, target2
 
     def split_alt_r(self):
         """
         -------------------------------------------------------
         Split a list into two parts. even contains the even indexed
-        elements, odd contains the odd indexed elements. At finish
-        self is empty.
-        Order of even and odd is not significant.
-        (recursive version)
+        elements, odd contains the odd indexed elements.
+        Order of even and odd is not significant. (recursive version)
         Use: even, odd = lst.split_alt()
         -------------------------------------------------------
         Returns:
@@ -628,34 +848,23 @@ class List:
                 The List is empty.
         -------------------------------------------------------
         """
-        # your code here
-        return
+        even = List()
+        odd = List()
 
-    def _linear_search_r(self, key):
-        """
-        -------------------------------------------------------
-        Searches for the first occurrence of key in the list.
-        Private helper methods - used only by other ADT methods.
-        (recursive version)
-        Use: p, c, i = self._linear_search(key)
-        -------------------------------------------------------
-        Parameters:
-            key - a partial data element (?)
-        Returns:
-            previous - pointer to the node previous to the node containing key (_List_Node)
-            current - pointer to the node containing key (_List_Node)
-            index - index of the node containing key, -1 if key not found (int)
-        -------------------------------------------------------
-        """
-        # your code here
-        return
+        self._split_alt_r_aux(even, odd)
+
+        return even, odd
+
+    def _split_alt_r_aux(self, even, odd):
+        if self._front is not None:
+            even._move_front_to_rear(self)
+            self._split_alt_r_aux(odd, even)
 
     def intersection(self, source1, source2):
         """
         -------------------------------------------------------
         Update the current list with values that appear in both
-        source1 and source2. Values do not repeat. source1 and
-        source2 are unchanged.
+        source1 and source2. Values do not repeat.
         (iterative algorithm)
         Use: target.intersection(source1, source2)
         -------------------------------------------------------
@@ -666,15 +875,26 @@ class List:
             None
         -------------------------------------------------------
         """
-        # your code here
-        return
+        source1_node = source1._front
+
+        while source1_node is not None:
+            value = source1_node._value
+            _, current, _ = source2._linear_search(value)
+
+            if current is not None:
+                _, current, _ = self._linear_search(value)
+
+                if current is None:
+                    self.append(value)
+
+            source1_node = source1_node._next
+        return None
 
     def intersection_r(self, source1, source2):
         """
         -------------------------------------------------------
         Update the current list with values that appear in both
-        source1 and source2. Values do not repeat. source1 and
-        source2 are unchanged.
+        source1 and source2. Values do not repeat.
         (recursive algorithm)
         Use: target.intersection(source1, source2)
         -------------------------------------------------------
@@ -685,15 +905,27 @@ class List:
             None
         -------------------------------------------------------
         """
-        # your code here
+        source1_node = source1._front
+        if source1_node is not None:
+            self._intersection_r_aux(source1_node, source2)
         return
+
+    def _intersection_r_aux(self, source1_node, source2):
+        if source1_node is not None:
+            value = source1_node._value
+            _, current, _ = source2._linear_search_r(value)
+            if current is not None:
+                _, current, _ = self._linear_search(value)
+                if current is None:
+                    self.append(value)
+            self._intersection_r_aux(source1_node._next, source2)
+        return None
 
     def union(self, source1, source2):
         """
         -------------------------------------------------------
         Update the current list with all values that appear in
-        source1 and source2. Values do not repeat. source1 and
-        source2 are unchanged.
+        source1 and source2. Values do not repeat.
         (iterative algorithm)
         Use: target.union(source1, source2)
         -------------------------------------------------------
@@ -704,15 +936,33 @@ class List:
             None
         -------------------------------------------------------
         """
-        # your code here
-        return
+        source1_node = source1._front
+
+        while source1_node is not None:
+            value = source1_node._value
+            _, current, _ = self._linear_search(value)
+
+            if current is None:
+                self.append(value)
+            source1_node = source1_node._next
+
+        source2_node = source2._front
+
+        while source2_node is not None:
+            value = source2_node._value
+            _, current, _ = self._linear_search(value)
+
+            if current is None:
+                self.append(value)
+
+            source2_node = source2_node._next
+        return None
 
     def union_r(self, source1, source2):
         """
         -------------------------------------------------------
         Update the current list with all values that appear in
-        source1 and source2. Values do not repeat. source1 and
-        source2 are unchanged.
+        source1 and source2. Values do not repeat.
         (recursive algorithm)
         Use: target.union(source1, source2)
         -------------------------------------------------------
@@ -723,7 +973,22 @@ class List:
             None
         -------------------------------------------------------
         """
-        # your code here
+        source1_node = source1._front
+        source2_node = source2._front
+        if source1_node is not None:
+            self._union_r_aux( source1_node)
+        if source2_node is not None:
+            self._union_r_aux( source2_node)
+        return None
+
+    def _union_r_aux(self,  source_node):
+        if source_node is not None:
+            value = source_node._value
+            _, current, _ = self._linear_search(value)
+
+            if current is None:
+                self.append(value)
+            self._union_r_aux( source_node._next)
         return
 
     def clean_r(self):
@@ -737,14 +1002,13 @@ class List:
             in the list. The first occurrence of each value is preserved.
         -------------------------------------------------------
         """
-        # your code here
         return
 
     def split_th(self):
         """
         -------------------------------------------------------
         Splits list into two parts. target1 contains the first half,
-        target2 the second half. At finish self is empty.
+        target2 the second half. Current list becomes empty.
         Uses Tortoise/Hare algorithm.
         Use: target1, target2 = lst.split()
         -------------------------------------------------------
@@ -753,15 +1017,13 @@ class List:
             target2 - a new List with <= 50% of the original List (List)
         -------------------------------------------------------
         """
-        # your code here
         return
 
     def split_key(self, key):
         """
         -------------------------------------------------------
         Splits list so that target1 contains all values <= key,
-        and target2 contains all values > key. At finish, self
-        is empty.
+        and target2 contains all values > key.
         Use: target1, target2 = lst.split_key(key)
         -------------------------------------------------------
         Parameters:
@@ -771,7 +1033,25 @@ class List:
             target2 - a new List of values > key (List)
         -------------------------------------------------------
         """
-        # your code here
+        return
+
+    def split_apply(self, func):
+        """
+        -------------------------------------------------------
+        Splits list into two parts. target1 contains all the values
+        where the result of calling func(value) is True, target2 contains
+        the remaining values. At finish, self is empty. Order of values
+        in targets is maintained.
+        Use: target1, target2 = lst.split_apply(func)
+        -------------------------------------------------------
+        Parameters:
+            func - a function that given a value in the list returns
+                True for some condition, otherwise returns False.
+        Returns:
+            target1 - a new List with values where func(value) is True (List)
+            target2 - a new List with values where func(value) is False (List)
+        -------------------------------------------------------
+        """
         return
 
     def copy(self):
@@ -785,7 +1065,6 @@ class List:
             new_list - a copy of self (List)
         -------------------------------------------------------
         """
-        # your code here
         return
 
     def copy_r(self):
@@ -799,54 +1078,25 @@ class List:
             new_list - a copy of self (List)
         -----------------------------------------------------------
         """
-        # your code here
         return
 
-    def _move_front_to_front(self, source):
+    def reverse_pc(self):
         """
         -------------------------------------------------------
-        Moves the front node from the source List to the front
-        of the current List. Private helper method.
-        Use: self._move_front_to_front(source)
+        Reverses a list through partitioning and concatenation.
+        Use: lst.reverse_pc()
         -------------------------------------------------------
-        Parameters:
-            source - a non-empty linked List (List)
         Returns:
-            The current List contains the old front of the source List and
-            its count is updated. The source List front and count are updated.
+            The contents of the current list are reversed.
         -------------------------------------------------------
         """
-        assert source._front is not None, \
-            "Cannot move the front of an empty List"
-
-        # your code here
-        return
-
-    def _move_front_to_rear(self, source):
-        """
-        -------------------------------------------------------
-        Moves the front node from the source List to the rear
-        of the current List. Private helper method.
-        Use: self._move_front_to_rear(source)
-        -------------------------------------------------------
-        Parameters:
-            source - a non-empty linked List (List)
-        Returns:
-            The current List contains the old front of the source List and
-            its count is updated. The source List front and count are updated.
-        -------------------------------------------------------
-        """
-        assert source._front is not None, \
-            "Cannot move the front of an empty List"
-
-        # your code here
         return
 
     def combine(self, source1, source2):
         """
         -------------------------------------------------------
-        Combines two source lists into the current target list. 
-        At finish, the contents of source1 and source2 are interlaced 
+        Combines two source lists into the current target list.
+        When finished, the contents of source1 and source2 are interlaced
         into target and source1 and source2 are empty.
         Order of source values is preserved.
         (iterative algorithm)
@@ -859,14 +1109,18 @@ class List:
             None
         -------------------------------------------------------
         """
-        # your code here
-        return
+        while source1._front is not None or source2._front is not None:
+            if source1._front is not None:
+                self._move_front_to_rear(source1)
+            if source2._front is not None:
+                self._move_front_to_rear(source2)
+        return None
 
     def combine_r(self, source1, source2):
         """
         -------------------------------------------------------
-        Combines two source lists into the current target list. 
-        When finished, the contents of source1 and source2 are interlaced 
+        Combines two source lists into the current target list.
+        When finished, the contents of source1 and source2 are interlaced
         into target and source1 and source2 are empty.
         Order of source values is preserved.
         (recursive algorithm)
@@ -879,7 +1133,6 @@ class List:
             None
         -------------------------------------------------------
         """
-        # your code here
         return
 
     def __iter__(self):
@@ -900,3 +1153,61 @@ class List:
         while current is not None:
             yield current._value
             current = current._next
+
+    def _move_front_to_front(self, source):
+        """
+        -------------------------------------------------------
+        Moves the front node from the source List to the front
+        of the current List. Private helper method.
+        Use: self._move_front_to_front(source)
+        -------------------------------------------------------
+        Parameters:
+            source - a non-empty linked List (List)
+        Returns:
+            The current List contains the old front of the source List and
+            its count is updated. The source List front and count are updated.
+        -------------------------------------------------------
+        """
+        assert source._front is not None, \
+            "Cannot move the front of an empty List"
+        node = source._front
+        source._count -= 1
+        source._front = source._front._next
+        if source._front is None:
+            source._rear = None
+        node._next = self._front
+        self._front = node
+        if self._rear is None:
+            self._rear = node
+        self._count += 1
+        return None
+
+    def _move_front_to_rear(self, source):
+        """
+        -------------------------------------------------------
+        Moves the front node from the source List to the rear
+        of the current List. Private helper method.
+        Use: self._move_front_to_rear(source)
+        -------------------------------------------------------
+        Parameters:
+            rs - a non-empty linked List (List)
+        Returns:
+            The current List contains the old front of the source List and
+            its count is updated. The source List front and count are updated.
+        -------------------------------------------------------
+        """
+        assert source._front is not None, \
+            "Cannot move the front of an empty List"
+        node = source._front
+        source._count -= 1
+        source._front = source._front._next
+        if source._front is None:
+            source._rear = None
+        if self._rear is None:
+            self._front = node
+        else:
+            self._rear._next = node
+        node._next = None
+        self._rear = node
+        self._count += 1
+        return None
