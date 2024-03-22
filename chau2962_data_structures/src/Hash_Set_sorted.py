@@ -12,7 +12,7 @@ __updated__ = "2024-03-14"
 
 # Imports
 # Use any appropriate data structure here.
-from List_array import List
+from Sorted_List_array import Sorted_List
 
 # Constants
 SEP = '-' * 40
@@ -45,7 +45,7 @@ class Hash_Set:
 
         # Define the empty table.
         for _ in range(self._capacity):
-            self._table.append(List())
+            self._table.append(Sorted_List())
 
     def __len__(self):
         """
@@ -81,8 +81,9 @@ class Hash_Set:
             slot - list at the position of hash key in self._table
         -------------------------------------------------------
         """
-        # your code here
-        return
+        key = hash(key) % self._capacity
+        slot = self._table[key]
+        return slot
 
 
     def __contains__(self, key):
@@ -121,7 +122,7 @@ class Hash_Set:
             if len(li) >= Hash_Set._LOAD_FACTOR:
                 self._rehash()
             inserted = True
-            li.append(value)
+            li.insert(value)
         return inserted
 
 
@@ -154,7 +155,7 @@ class Hash_Set:
         -------------------------------------------------------
         """
         slot = hash(key) % self._capacity
-        li: List = self._table[slot]
+        li: Sorted_List = self._table[slot]
         return li.remove(key)
 
 
@@ -172,10 +173,10 @@ class Hash_Set:
         new = []
         new_cap = self._capacity * 2 + 1
         for _ in range(new_cap):
-            new.append(List())
+            new.append(Sorted_List())
         for cont in self._table:
             for v in cont:
-                new[hash(v) % new_cap].append(v)
+                new[hash(v) % new_cap].insert(v)
         self._capacity = new_cap
         self._table = new
         return None

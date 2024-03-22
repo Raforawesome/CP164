@@ -565,6 +565,42 @@ class List:
             self._reverse_r_aux(next, curr)
         return
 
+    def clear(self):
+        """
+        ---------------------------------------------------------
+        Removes all elements from the linked list.
+        Use: source.clear()
+        -------------------------------------------------------
+        Returns:
+            None
+        -------------------------------------------------------
+        """
+        self._front = None
+        self._rear = None
+        self._count = 0
+        return None
+
+    def _append_list(self, target):
+        """
+        ---------------------------------------------------------
+        Appends target list to self.
+        Use: source.clear()
+        -------------------------------------------------------
+        Parameters:
+            target - Target list to append (List of ?)
+        Returns:
+            None
+        -------------------------------------------------------
+        """
+        if self._rear is None:  # empty list
+            self._front = target._front
+            self._rear = target._rear
+            self._count = target._count
+        else:
+            self._rear._next = target._front
+            self._count += target._count
+        return None
+
     def clean(self):
         """
         ---------------------------------------------------------
@@ -668,29 +704,33 @@ class List:
         -------------------------------------------------------
         """
         if pln is not prn:
-
+            # Swap only if two nodes are not the same node
             if pln is None:
+                # Make r the new front
                 left = self._front
                 self._front = prn._next
             else:
                 left = pln._next
                 pln._next = prn._next
-
             if prn is None:
+                # Make l the new front
                 right = self._front
                 self._front = left
             else:
                 right = prn._next
                 prn._next = left
 
+            # Swap next pointers
+            # lst._next, r._next = r._next, lst._next
             temp = left._next
             left._next = right._next
             right._next = temp
+            # Update the rear
             if right._next is None:
                 self._rear = right
             elif left._next is None:
                 self._rear = left
-        return None
+        return
 
     def __eq__(self, target):
         """

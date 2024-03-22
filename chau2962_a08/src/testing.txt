@@ -1,0 +1,90 @@
+-------------------------------------------------------
+Lab/Assignment  Testing
+-------------------------------------------------------
+Author:  Tahir Chaudhry
+ID:      169052962
+Email:   chau2962@mylaurier.ca
+Version: 2024-03-16
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+-------------------------------------------------------
+  ~/eclipse/CP164/chau2962_a08/src  master !3 ?7
+❯ dtpy t01.py
+Testing is_valid...
+is_valid Tests Passed
+Testing min...
+min Test Passed
+Testing leaf_count...
+leaf_count Test Passed
+Testing one_child_count...
+one_child_count Test Passed
+Testing two_child_count...
+two_child_count Test Passed
+Testing inorder...
+[1, 3, 4, 5, 8]
+inorder Test Passed
+Testing preorder...
+[5, 3, 1, 4, 8]
+preorder Test Passed
+Testing postorder...
+postorder Test Passed
+Testing levelorder...
+levelorder Test Passed
+Testing remove...
+remove Test Passed
+Testing remove (non-existent)...
+remove (non-existent) Test Passed
+-------------------------------------------------------
+-------------------------------------------------------
+t02
+-------------------------------------------------------
+❯ dtpy t02.py
+Comparing by order: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Total comparisons: 60,990,725
+------------------------------------------------------------
+Comparing by order: MFTCJPWADHKNRUYBEIGLOQSVXZ
+Total comparisons: 19,115,930
+------------------------------------------------------------
+Comparing by order: ETAOINSHRDLUCMPFYWGBVKJXZQ
+Total comparisons: 17,550,636
+-------------------------------------------------------
+-------------------------------------------------------
+t03
+-------------------------------------------------------
+  ~/eclipse/CP164/chau2962_a08/src  master !3 ?8
+❯ dtpy t03.py
+Letter Count/Percent Table
+
+Total Count: 17,550,636
+
+LETTER      COUNT       %
+-------------------------
+     A  1,047,241  05.97%
+     B    112,491  00.64%
+     C    238,482  01.36%
+     D    430,625  02.45%
+     E  4,976,567  28.36%
+     F    265,827  01.51%
+     G    145,602  00.83%
+     H    634,077  03.61%
+     I  1,510,933  08.61%
+     J     17,514  00.10%
+     K     49,098  00.28%
+     L    443,290  02.53%
+     M    186,600  01.06%
+     N    691,693  03.94%
+     O  2,073,573  11.81%
+     P    134,093  00.76%
+     Q      7,599  00.04%
+     R    489,833  02.79%
+     S    679,726  03.87%
+     T  2,446,639  13.94%
+     U    460,604  02.62%
+     V     78,756  00.45%
+     W    203,751  01.16%
+     X     12,075  00.07%
+     Y    208,229  01.19%
+     Z      5,718  00.03%
+-------------------------------------------------------

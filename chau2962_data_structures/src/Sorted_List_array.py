@@ -71,14 +71,12 @@ class Sorted_List:
             the number of values in source.
         -------------------------------------------------------
         """
-        # Your code here
-
-        return
+        return len(self._values)
 
     def _binary_search(self, key):
         """
         -------------------------------------------------------
-        Searches for the first occurrence of key in the sorted list. 
+        Searches for the first occurrence of key in the sorted list.
         Performs a stable search.
         Private helper method - used only by other ADT methods.
         Use: i = self._binary_search(key)
@@ -136,8 +134,8 @@ class Sorted_List:
     def combine(self, source1, source2):
         """
         -------------------------------------------------------
-        Combines two source lists into the current target list. 
-        When finished, the contents of source1 and source2 are interlaced 
+        Combines two source lists into the current target list.
+        When finished, the contents of source1 and source2 are interlaced
         into target and source1 and source2 are empty.
         Values are sorted.
         (iterative algorithm)
@@ -161,7 +159,7 @@ class Sorted_List:
         Use: target = source.copy()
         -------------------------------------------------------
         Returns:
-            target - a sorted list containing a copy of the contents 
+            target - a sorted list containing a copy of the contents
                 of source (Sorted_List)
         -------------------------------------------------------
         """
@@ -241,9 +239,20 @@ class Sorted_List:
             None
         -------------------------------------------------------
         """
-        # Your code here
+        low = 0
+        high = len(self._values) - 1
 
-        return
+        while low <= high:
+            mid = (high - low) // 2 + low
+
+            if self._values[mid] > value:
+                high = mid - 1
+            else:
+                low = mid + 1
+
+        self._values.insert(low, value)
+
+        return None
 
     def intersection(self, source1, source2):
         """
@@ -363,7 +372,7 @@ class Sorted_List:
             args - an array of arguments (tuple of int)
                 args[0], if it exists, is the index i
         Returns:
-            value - if args exists, the value at position args[0], otherwise 
+            value - if args exists, the value at position args[0], otherwise
                 the last value in source, value is removed from source (?)
         -------------------------------------------------------
         """
@@ -491,9 +500,9 @@ class Sorted_List:
     def split_apply(self, func):
         """
         -------------------------------------------------------
-        Splits list into two parts. target1 contains all the values 
+        Splits list into two parts. target1 contains all the values
         where the result of calling func(value) is True, target2 contains
-        the remaining values. At finish, self is empty. Order of values 
+        the remaining values. At finish, self is empty. Order of values
         in targets is maintained.
         Use: target1, target2 = source.split_apply(func)
         -------------------------------------------------------
